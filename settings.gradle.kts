@@ -33,4 +33,6 @@ plugins {
 }
 
 include(":desktopApp")
-include(":shared")
+include(":db")
+include(":hub")
+include(":pref")
