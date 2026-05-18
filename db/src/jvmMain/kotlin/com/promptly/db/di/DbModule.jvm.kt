@@ -4,7 +4,9 @@ import androidx.room.Room
 import com.promptly.db.AppDatabase
 import com.promptly.db.getRoomDatabase
 import com.promptly.db.repository.PromptRepositoryImpl
+import com.promptly.db.repository.ShortcutRepositoryImpl
 import com.promptly.hub.domain.repository.PromptRepository
+import com.promptly.pref.domain.repository.ShortcutRepository
 import org.koin.dsl.module
 import java.io.File
 
@@ -17,5 +19,7 @@ val dbModule = module {
         getRoomDatabase(builder)
     }
     single { get<AppDatabase>().promptDao() }
+    single { get<AppDatabase>().prefDao() }
     single<PromptRepository> { PromptRepositoryImpl(get()) }
+    single<ShortcutRepository> { ShortcutRepositoryImpl(get()) }
 }
