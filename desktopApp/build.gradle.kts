@@ -7,7 +7,19 @@ plugins {
 }
 
 dependencies {
-    implementation(projects.shared)
+    implementation(projects.hub)
+    implementation(projects.db)
+    implementation(projects.pref)
+
+    implementation(libs.koin.core)
+    implementation(libs.koin.compose)
+
+    implementation(libs.compose.runtime)
+    implementation(libs.compose.foundation)
+    implementation(libs.compose.material3)
+    implementation(libs.compose.ui)
+    implementation(libs.androidx.lifecycle.viewmodelCompose)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
 
     implementation(compose.desktop.currentOs)
     implementation(libs.kotlinx.coroutinesSwing)
